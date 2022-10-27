@@ -1,0 +1,215 @@
+/* Golbal Attibutes */
+:root {
+  --main-color1: hsl(179, 62%, 43%);
+  --main-color2: hsl(179, 62%, 40%);
+  --white-color: hsl(0, 0%, 100%);
+  --brightY-color: hsl(71, 73%, 54%);
+  --light-gray: hsl(204, 43%, 93%);
+  --grayishB-color: hsl(218, 22%, 67%);
+  --main-padding: 1.3rem;
+  --main-margin: 1.7rem;
+  --border-radius: 0.5rem;
+  --query-padding: 0.8rem;
+  --query-margin: 0.8rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  background-color: hsl(204, 43%, 93%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+main {
+  margin-top: 2rem;
+  text-align: left;
+  display: grid;
+  grid-template-areas:
+    "head"
+    "monthly"
+    "whyus";
+  max-width: 90%;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+/* Start Section One */
+.head {
+  background-color: var(--white-color);
+  padding: var(--main-padding);
+  grid-area: head;
+}
+
+.head h1 {
+  font-size: 1.6rem;
+  color: var(--main-color1);
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+  font-weight: 600;
+}
+
+.head h2 {
+  font-size: 1.2rem;
+  padding-bottom: var(--main-padding);
+  color: var(--brightY-color);
+}
+
+.head p {
+  color: var(--grayishB-color);
+  line-height: 1.6;
+  padding-bottom: calc(var(--main-padding) - 0.8rem);
+}
+
+/* End Section One */
+
+/* Start Section Two */
+
+.monthly {
+  padding: var(--main-padding);
+  background-color: var(--main-color2);
+  grid-area: monthly;
+}
+
+.monthly h3 {
+  color: var(--white-color);
+  font-weight: 400;
+  padding-bottom: var(--main-padding);
+}
+
+.monthly .para-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: calc(var(--main-padding) - 1rem);
+}
+
+.monthly .para-text p:first-child {
+  color: var(--white-color);
+  font-size: 2rem;
+  padding-right: calc(var(--main-padding) - 0.5rem);
+  font-weight: 400;
+}
+
+.monthly .para-text p:last-child {
+  color: var(--light-gray);
+  font-weight: 400;
+}
+
+.monthly p:last-of-type {
+  color: var(--light-gray);
+  font-size: 0.8rem;
+}
+
+.monthly button {
+  all: unset;
+  cursor: pointer;
+  background-color: var(--brightY-color);
+  color: var(--white-color);
+  font-weight: 400;
+  width: 90%;
+  margin-top: var(--main-margin);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: calc(var(--main-padding) - 0.3rem);
+  box-shadow: rgb(100 100 111 / 40%) 0px 7px 29px 0px;
+  border-radius: var(--border-radius);
+}
+
+/* End Section Two */
+
+/* Start Section Three */
+
+.whyus {
+  background-color: var(--main-color1);
+  padding: var(--main-padding);
+  grid-area: whyus;
+}
+
+.whyus h3 {
+  color: var(--white-color);
+  font-weight: 600;
+  padding-bottom: var(--main-padding);
+}
+
+.whyus ul {
+  color: var(--light-gray);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* End Section Three */
+
+/* Start Footer */
+
+footer {
+  font-size: 10px;
+}
+
+footer a {
+  text-transform: uppercase;
+  color: var(--main-color2);
+}
+
+/* End Footer */
+
+/* Start Media Query */
+
+@media (min-width: 50rem) {
+  main {
+    grid-template-areas:
+      "head head"
+      "monthly whyus";
+    max-width: 45%;
+  }
+  .head h1 {
+    font-size: 1.2rem;
+    padding-top: var(--query-padding);
+    padding-bottom: var(--query-margin);
+  }
+  .head h2 {
+    font-size: .8rem;
+    padding-bottom: var(--query-padding);
+  }
+  .head p {
+    font-size: 0.75rem;
+    line-height: 2;
+  }
+  .monthly h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding-bottom: var(--query-padding);
+  }
+  .monthly .para-text p:first-child {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-right: 0.5rem;
+  }
+  .monthly .para-text p:last-child {
+    font-size: 0.7rem;
+  }
+  .monthly button {
+    padding: 0.7rem;
+  }
+  .whyus h3 {
+    padding-bottom: var(--query-padding);
+  }
+  .whyus ul {
+    font-size: 0.7rem;
+    line-height: 1.2;
+  }
+}
+
+/* End Media Query */
